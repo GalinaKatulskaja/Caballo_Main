@@ -97,6 +97,15 @@ public class Posicion {
         return true;
     }
     
+    //Creamos el método toString que devolverá un String y será la representación de la fila y la columna.
+
+    @Override
+    public String toString() {
+        return "Posicion{" + "fila=" + fila + ", columna=" + columna + '}';
+    }
+    
+    
+    
     
     
     

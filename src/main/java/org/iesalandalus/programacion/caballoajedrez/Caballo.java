@@ -40,11 +40,48 @@ public class Caballo {
                      posicion=new Posicion(8,'b');
                      break;
              }
-       
-        
-       
      }
-    
+     //Creamos un Constructor para la clase Caballo que acepte como parámetros el color y la columnaInicial
+     
+     public Caballo(Color color, char columnaInicial)
+        {
+            this.color=color;
+            
+             switch(color){
+                 case BLANCO:
+                     posicion=new Posicion(1,'b');
+                     break;
+                 case NEGRO:
+                     posicion=new Posicion(8,'b');
+                     break;
+                    
+             }
+             if(columnaInicial!='b'& columnaInicial!='g')
+        {
+            throw new IllegalArgumentException ("ERROR: La columna introducida no es correcta");
+        }
+         
+         if(columnaInicial=='b'& this.color==Color.BLANCO)
+         {
+             this.posicion= new Posicion(1,'b');
+         }
+         
+         if(columnaInicial=='b'& this.color==Color.NEGRO)
+         {
+             this.posicion= new Posicion(8,'b');
+         }
+         
+         if(columnaInicial=='g'& this.color==Color.BLANCO)
+         {
+             this.posicion= new Posicion(1,'g');
+         }
+         
+         if(columnaInicial=='g'& this.color==Color.NEGRO)
+         {
+             this.posicion= new Posicion(8,'g');
+         }
+        }
+     
     //Creamos los métodos get y set para cada atributo
 
     public Color getColor() {

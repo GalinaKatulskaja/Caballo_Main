@@ -24,6 +24,27 @@ public class Caballo {
         posicion = new Posicion(8,'b');
     }
     
+    
+    /*Creamos un constructor para la clase Caballo que acepte como parámetro el color
+    que creará un caballo de dicho color cuya posición será '1b' si es blanco 
+    o '8b' si es negro*/
+     public Caballo(Color color)
+     {
+       this.color=color;
+            
+             switch(color){
+                 case BLANCO:
+                     posicion=new Posicion(1,'b');
+                     break;
+                 case NEGRO:
+                     posicion=new Posicion(8,'b');
+                     break;
+             }
+       
+        
+       
+     }
+    
     //Creamos los métodos get y set para cada atributo
 
     public Color getColor() {

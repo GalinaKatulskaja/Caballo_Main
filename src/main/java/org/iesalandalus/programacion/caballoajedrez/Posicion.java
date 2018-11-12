@@ -24,6 +24,14 @@ public class Posicion {
         setColumna(columna);
     }
     
+    //Creamos el constructor copia para esta clase.
+    
+    public Posicion(Posicion copia)
+    {
+        this.fila=copia.fila;
+        this.columna=copia.columna;
+    }
+    
     /*Creamos los métodos get y set para los atributos:
     (las filas van del 1 al 8 -ambos inclusive- y las columnas 
     de la 'a' a la 'h' -ambos inclusive-)  y si no se lance 

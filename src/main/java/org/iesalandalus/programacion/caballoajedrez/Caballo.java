@@ -221,6 +221,14 @@ y no modificará la posición del caballo.*/
     }
     
     
+    /*Crea el método toString que devuelva un String que será la representación
+    de dicho objeto (color y posición).*/
+
+    @Override
+    public String toString() {
+        return "Caballo{" + "color=" + color + ", posicion=" + posicion + '}';
+    }
+    
     
     
 }

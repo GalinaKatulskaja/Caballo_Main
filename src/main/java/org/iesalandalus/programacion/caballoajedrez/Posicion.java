@@ -15,6 +15,14 @@ public class Posicion {
     private int fila;
     private char columna;
     
+    /*Creamos un constructor para la clase Posicion con parámetros 
+    fila y columna y que los asigne a los atributos si son correctos
+    y si no lance una excepción IllegalArgumentException*/
+    public Posicion(int fila, char columna)
+    {
+        setFila(fila);
+        setColumna(columna);
+    }
     
     /*Creamos los métodos get y set para los atributos:
     (las filas van del 1 al 8 -ambos inclusive- y las columnas 

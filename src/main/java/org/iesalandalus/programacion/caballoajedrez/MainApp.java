@@ -27,7 +27,7 @@ public class MainApp {
                     //Ejecutamos la opción elegida por el usuario
                     ejecutarOpcion(opcion);
                    }while(opcion!=0);
-            System.out.println("Gracias por su elección");
+            System.out.println("El juego se ha terminado corectamente");
         }
         
         /**
@@ -114,14 +114,13 @@ public class MainApp {
              */
         private static void crearCaballoDefectoColor() throws OperationNotSupportedException
         {  
-            caballo = new Caballo( );
-            elegirColor(); 
             
-            System.out.println("El caballo creado correctamente");
+            elegirColor(); 
+            caballo = new Caballo( color);
+
             System.out.println("-------------------------------");
-            System.out.println("");
-            System.out.println("");
             System.out.println("El caballo " + color );
+            System.out.println("El caballo creado correctamente");
         }
         /**
          * El metodo que crea y devuleve el Color del caballo
@@ -153,12 +152,12 @@ public class MainApp {
             
             elegirColor(); 
             elegirColumnaInicial();
-            char columnaInicial=posicion.getColumna();
-            caballo=new Caballo(color,columnaInicial);
+           // char columnaInicial=;
+            caballo=new Caballo(color,posicion.getColumna());
             System.out.println("El caballo creado correctamente");
             System.out.println("-------------------------------");
-            System.out.println("El caballo es de color " + color + " la columna inicial es " + columnaInicial);
-            System.out.println("El caballo es de color " + color +" la posicion del caballo es " +posicion);
+            System.out.println("El caballo es de color " + color + " la columna inicial es " + posicion.getColumna());
+            System.out.println("El caballo esta en la " +posicion);
         }
         //EL metodo que crea el la columna inicial del caballo    
         private static char elegirColumnaInicial() throws OperationNotSupportedException 

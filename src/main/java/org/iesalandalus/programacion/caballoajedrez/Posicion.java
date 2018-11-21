@@ -118,7 +118,6 @@ public class Posicion {
 
     @Override
     public String toString() {
-        Posicion posicion = new Posicion(fila,columna);
         return "Posicion{" + "fila=" + fila + ", columna=" + columna + '}';
     }
 

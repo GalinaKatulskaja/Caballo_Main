@@ -97,10 +97,10 @@ y no modificará la posición del caballo.*/
         {
             throw new IllegalArgumentException("La dirección no puede ser nula.");
 	}
-           /* if ((posicion.getFila()) <= 0 && posicion.getColumna()<=0) 
+            if ((posicion.getFila()) <= 0 && posicion.getColumna()<=0) 
             {
                 throw new IllegalArgumentException("El número de pasos debe ser mayor que cero.");
-            }*/
+            }
                 switch (direccion) 
                 {
                     case ARRIBA_DERECHA:

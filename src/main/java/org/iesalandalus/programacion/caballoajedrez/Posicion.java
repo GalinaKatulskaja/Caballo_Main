@@ -8,7 +8,7 @@ package org.iesalandalus.programacion.caballoajedrez;
 /**
  *
  * @author Galina
- * 
+ *
  * //Crea la clase Posicion. Crea los atributos fila (int) y columna (char)
  */
 public class Posicion {
@@ -25,11 +25,10 @@ public class Posicion {
     }
     
     //Creamos el constructor copia para esta clase.
-    
-    public Posicion(Posicion copia)
+    public Posicion(final Posicion posicion)
     {
-        this.fila=copia.fila;
-        this.columna=copia.columna;
+        this.fila=posicion.fila;
+        this.columna=posicion.columna;
     }
     
     /*Creamos los métodos get y set para los atributos:
@@ -40,30 +39,48 @@ public class Posicion {
         return fila;
     }
 
-    public void setFila(int fila) {
-        if(fila<1 | fila>8)
+    public final void setFila(int fila) {
+
+       this.fila = fila;  
+       if(fila == 0)
         {
-            throw new IllegalArgumentException ("ERROR - La fila introducida no es correcta");
+            throw new IllegalArgumentException("ERROR: Fila no válida.");
+        }
+           
+        if(fila<1 || fila>8)
+        {
+            throw new IllegalArgumentException("ERROR - La fila introducida no es correcta");
         }
         else
-        {
+        
         this.fila = fila;
-        }
     }
 
     public char getColumna() {
         return columna;
     }
 
-    public void setColumna(char columna) {
-        if(columna!='a'& columna!='b' & columna!='c'& columna!='d' & columna!='e' & columna!='f' & columna!='g' & columna!='h')
+    public final void setColumna(char columna) {
+        
+        this.columna=columna;
+        
+        if(columna == 0)
         {
-            throw new IllegalArgumentException ("ERROR - La columna introducida no es correcta");
+            throw new IllegalArgumentException("ERROR - La fila introducida no es correcta");
         }
+        if(columna< 'a' || columna>'h')
+       
+         {
+            throw new IllegalArgumentException("EERROR: Columna no válida." );
+        }
+       /* if(columna!='a'&& columna!='b' && columna!='c' && columna!='d' && columna!='e' && columna!='f' && columna!='g' && columna!='h')
+        {
+            throw new IllegalArgumentException("EERROR: Columna no válida." );
+        }*/
         else
-        {
-        this.columna = columna;
-        }
+           
+            this.columna = columna;
+            
     }
     
      //Creamos el método equals para comparar la igualdad de dos objetos de esta clase.
@@ -103,6 +120,10 @@ public class Posicion {
     public String toString() {
         return "Posicion{" + "fila=" + fila + ", columna=" + columna + '}';
     }
+
+ /*   void mover(Direccion direccion) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
     
     
     

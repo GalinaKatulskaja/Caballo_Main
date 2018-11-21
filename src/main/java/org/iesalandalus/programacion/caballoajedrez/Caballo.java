@@ -19,7 +19,9 @@ public final class Caballo {
     private Color color;
     private Posicion posicion;
     private static final String ERROR_MOVIMIENTO = "Movimiento no permitido: ";
-
+   // private char columna;
+   // private int fila;
+    //String posicionCaballo = (new Posicion(fila, columna)).toString();
     private Caballo caballo;
     
 
@@ -55,10 +57,9 @@ public final class Caballo {
       * @param color
       * @param columnaInicial
       */
-     public Caballo(Color color, char columnaInicial) throws OperationNotSupportedException
+     public Caballo(Color color, char columnaInicial)
      {
          setColor(color);
-         
          if( columnaInicial == 0)
         {
             throw new IllegalArgumentException ("ERROR: La columna introducida no es correcta");
@@ -69,10 +70,8 @@ public final class Caballo {
             }
             //Comprobamos de que color el caballo, en caso de no tener ninguno se lanza la excepción      
         // Asignamos la columna Inicial al caballo   
-        try{
                  if(columnaInicial=='b' & color==Color.BLANCO)
                         {
-                            
                            posicion= new Posicion(1,'b');
                         }
                          if(columnaInicial=='b' & color == Color.NEGRO)
@@ -87,10 +86,6 @@ public final class Caballo {
                          {
                              posicion= new Posicion(8,'g');
                          }
-        }     catch (IllegalArgumentException e) {
-                System.out.println("EL MOVIMIENTO NO ES VALIDO");
-                throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
-            }    
     }
      
      

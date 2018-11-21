@@ -150,11 +150,14 @@ public class MainApp {
         // El metodo que crea un caballo con la posibilidad de elegir su color y posicion 
         private static void crearCaballoColorPosicion() throws OperationNotSupportedException
         {
-            caballo= new Caballo();
+            
             elegirColor(); 
             elegirColumnaInicial();
+            char columnaInicial=posicion.getColumna();
+            caballo=new Caballo(color,columnaInicial);
             System.out.println("El caballo creado correctamente");
             System.out.println("-------------------------------");
+            System.out.println("El caballo es de color " + color + " la columna inicial es " + columnaInicial);
             System.out.println("El caballo es de color " + color +" la posicion del caballo es " +posicion);
         }
         //EL metodo que crea el la columna inicial del caballo    
@@ -166,24 +169,30 @@ public class MainApp {
                 System.out.println("Introduce un caracter g, b");
                 columnaInicial = Entrada.caracter();
                 }while(columnaInicial!='b'&& columnaInicial!='g');
+                    
 
                      if(columnaInicial=='b' & color==Color.BLANCO)
                         {
                            posicion= new Posicion(1,'b');
+                           columnaInicial=posicion.getColumna();
+                            
                         }
                          if(columnaInicial=='b' & color == Color.NEGRO)
                          {
-                             posicion= new Posicion(8,'b');
+                            posicion= new Posicion(8,'b');
+                            columnaInicial=posicion.getColumna();
                          }
                          if(columnaInicial=='g'& color==Color.BLANCO)
                          {
                             posicion= new Posicion(1,'g');
+                            columnaInicial=posicion.getColumna();
                          }
                          if(columnaInicial=='g'  & color == Color.NEGRO)
                          {
-                             posicion= new Posicion(8,'g');
+                           posicion= new Posicion(8,'g');
+                             columnaInicial=posicion.getColumna();
                          }
-                     System.out.println("La columna inicial es " + columnaInicial +" y su posicion es " + posicion);
+                     System.out.println("La columna inicial es " + columnaInicial +" y su " + posicion);
             return columnaInicial;
             
         }

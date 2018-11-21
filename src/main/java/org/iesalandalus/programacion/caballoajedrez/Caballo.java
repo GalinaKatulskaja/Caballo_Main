@@ -19,9 +19,6 @@ public final class Caballo {
     private Color color;
     private Posicion posicion;
     private static final String ERROR_MOVIMIENTO = "Movimiento no permitido: ";
-   // private char columna;
-   // private int fila;
-    //String posicionCaballo = (new Posicion(fila, columna)).toString();
     private Caballo caballo;
     
 
